@@ -46,8 +46,8 @@ If you use EUreqAI in your research, please cite:
 ```
 @software{eureqai2024,
   title={EUreqAI: EU AI Act Compliance Framework for LLMs},
-  author={[Your Name]},
+  author={[Despoina Ioannidou]},
   year={2024},
-  url={https://github.com/[username]/eureqai}
+  url={https://github.com/EUreqAI/eureqai}
 }
 ```
