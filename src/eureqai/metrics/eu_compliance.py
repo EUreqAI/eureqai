@@ -72,7 +72,7 @@ class RiskAssessmentMetric(BaseMetric):
         )
 
 class TransparencyRequirementMetric(BaseMetric):
-    """Evaluates compliance with transparency requirements (Article 52)."""
+    """Evaluates compliance with transparency requirements (Article 50)."""
     
     def compute(
         self,

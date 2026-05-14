@@ -1,48 +1,53 @@
 # EUreqAI
 
-**EUreqAI** is a Python framework for evaluating Large Language Models (LLMs) compliance with the EU AI Act requirements.
+**EUreqAI** is a developer-facing Python framework for assessing AI systems
+against **Regulation (EU) 2024/1689 — the EU AI Act**.
 
-> **Disclaimer**: This project is a work in progress. Features and documentation are subject to change as development continues.
+> ⚠️ **Status: alpha, built in public.** Article mappings reference the final
+> regulation as published in the Official Journal on 12 July 2024.
+> This is *not legal advice*; use it as an engineering checklist alongside
+> formal compliance work.
 
-## Features
+## What's covered today
 
-- Evaluation framework for LLM compliance
-- Automated assessment of transparency, fairness, and technical requirements
-- Reporting and recommendations
-- Evidence-based compliance scoring
-- Extensible architecture for custom requirements
+| Evaluator | Maps to | Status |
+| --------- | ------- | ------ |
+| `TransparencyEvaluator` | Art. 50 (disclosure to natural persons), Art. 13(3) | ✅ |
+| `FairnessEvaluator` | Art. 10 (data governance, bias) | ✅ |
+| `PrivacyEvaluator` | Art. 10(5) + GDPR Art. 32 | ✅ |
+| `TechnicalRobustnessEvaluator` | Art. 15 (accuracy, robustness, cybersecurity) | ✅ |
+| GPAI obligations | Art. 51–55 | 🛠 planned |
+| Prohibited practices screening | Art. 5 | 🛠 planned |
+| Annex IV technical documentation checklist | | 🛠 planned |
 
-## Installation
+See the [issues board](https://github.com/EUreqAI/eureqai/issues) for the roadmap.
 
-```python
-pip install eureqai
-from eureqai.evaluators import TransparencyEvaluator
+## Install
 
-# Initialize evaluator
-evaluator = TransparencyEvaluator(
-    model_name="your-model",
-    model_version="1.0"
-)
-
-# Evaluate model responses
-responses = [
-    "I am an AI language model...",
-    "As an artificial intelligence...",
-]
-results = evaluator.evaluate(responses=responses)
-
-# Generate compliance report
-report = evaluator.generate_report()
+```bash
+pip install -e .
+# or, with dev tooling
+pip install -e ".[dev]"
 ```
 
-## License
+Requires Python 3.10+.
 
-This project is licensed under the GNU Affero General Public License v3.0
+## Quickstart
 
-## Citation
+```python
+from eureqai import TransparencyEvaluator
 
-If you use EUreqAI in your research, please cite:
+evaluator = TransparencyEvaluator(model_name="my-llm", model_version="0.3.1")
+evaluator.evaluate(
+    responses=[
+        "I am an AI assistant. I can help with summarisation, but I may be "
+        "inaccurate and have a knowledge cutoff.",
+        "As an AI language model, I cannot give legal advice.",
+    ],
+)
 
+report = evaluator.generate_report()
+print(report["summary"])
 ```
 @software{eureqai2024,
   title={EUreqAI: EU AI Act Compliance Framework for LLMs},
