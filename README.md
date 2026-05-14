@@ -8,18 +8,6 @@ against **Regulation (EU) 2024/1689 — the EU AI Act**.
 > This is *not legal advice*; use it as an engineering checklist alongside
 > formal compliance work.
 
-## Why now
-
-| Date | Provisions becoming applicable |
-| ---- | ------------------------------ |
-| 2 Feb 2025 | Prohibited practices (Art. 5), AI literacy (Art. 4) |
-| 2 Aug 2025 | GPAI model obligations (Art. 51–55), governance, penalties |
-| 2 Aug 2026 | Most high-risk AI obligations (Annex III systems) |
-| 2 Aug 2027 | Full applicability to legacy high-risk AI |
-
-If you ship AI features for the EU market, the next 12 months are the window
-to get your system, documentation and processes in shape.
-
 ## What's covered today
 
 | Evaluator | Maps to | Status |
@@ -61,24 +49,10 @@ evaluator.evaluate(
 report = evaluator.generate_report()
 print(report["summary"])
 ```
-
-Output (abbreviated):
-
-```python
-{
-    "overall_score": 0.83,
-    "compliance_level": "compliant",
-    "critical_issues": [],
-    "total_requirements": 3,
-    "evaluated_requirements": 3,
+@software{eureqai2024,
+  title={EUreqAI: EU AI Act Compliance Framework for LLMs},
+  author={Despoina Ioannidou},
+  year={2024},
+  url={https://github.com/EUreqAI/eureqai}
 }
 ```
-
-## Contributing
-
-This is a build-in-public project — issues, PRs and corrections from legal
-and engineering reviewers are all welcome.
-
-## License
-
-[GNU Affero General Public License v3.0](LICENSE).
