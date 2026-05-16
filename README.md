@@ -16,7 +16,7 @@ against **Regulation (EU) 2024/1689 — the EU AI Act**.
 | `FairnessEvaluator` | Art. 10 (data governance, bias) | ✅ |
 | `PrivacyEvaluator` | Art. 10(5) + GDPR Art. 32 | ✅ |
 | `TechnicalRobustnessEvaluator` | Art. 15 (accuracy, robustness, cybersecurity) | ✅ |
-| GPAI obligations | Art. 51–55 | 🛠 planned |
+| `GPAIEvaluator` | Art. 51, 53, 55 (incl. systemic-risk presumption + Annex XI/XII) | ✅ |
 | Prohibited practices screening | Art. 5 | 🛠 planned |
 | Annex IV technical documentation checklist | | 🛠 planned |
 
