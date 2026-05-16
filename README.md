@@ -10,15 +10,14 @@ against **Regulation (EU) 2024/1689 — the EU AI Act**.
 
 ## What's covered today
 
-| Evaluator | Maps to | Status |
-| --------- | ------- | ------ |
-| `TransparencyEvaluator` | Art. 50 (disclosure to natural persons), Art. 13(3) | ✅ |
+| Feature | Maps to | Status |
+| ------- | ------- | ------ |
+| **`eureqai assess` CLI** — describe your system in YAML, get a Markdown readiness report | Articles 4, 5, 10, 11, 12, 13, 14, 15, 17, 27, 50, 51, 53, 55, 72; Annex IV | ✅ |
+| `TransparencyEvaluator` | Art. 50, Art. 13(3) | ✅ |
 | `FairnessEvaluator` | Art. 10 (data governance, bias) | ✅ |
 | `PrivacyEvaluator` | Art. 10(5) + GDPR Art. 32 | ✅ |
-| `TechnicalRobustnessEvaluator` | Art. 15 (accuracy, robustness, cybersecurity) | ✅ |
-| GPAI obligations | Art. 51–55 | 🛠 planned |
-| Prohibited practices screening | Art. 5 | 🛠 planned |
-| Annex IV technical documentation checklist | | 🛠 planned |
+| `TechnicalRobustnessEvaluator` | Art. 15 | ✅ |
+| Per-area deep-dive evaluators (GPAI, prohibited practices, FRIA) | Art. 5, 27, 51–55 | 🛠 planned |
 
 See the [issues board](https://github.com/EUreqAI/eureqai/issues) for the roadmap.
 
@@ -32,7 +31,30 @@ pip install -e ".[dev]"
 
 Requires Python 3.10+.
 
-## Quickstart
+## Quickstart — CLI
+
+Most developers don't have a batch of LLM responses sitting around — they have
+an AI system in development and want a readiness checklist. The CLI does that:
+
+```bash
+# 1. Scaffold a project description.
+eureqai init --output eureqai.yml --role provider
+
+# 2. Fill in the answers (yes / no / partial / na) and evidence paths.
+
+# 3. Generate a Markdown readiness report.
+eureqai assess --config eureqai.yml --output readiness.md
+
+# Or fail CI if any critical obligation is unmet:
+eureqai assess --config eureqai.yml --fail-on-blockers
+```
+
+A worked example lives at [`examples/sample_project.yml`](examples/sample_project.yml)
+and the rendered report at [`examples/sample_report.md`](examples/sample_report.md).
+
+## Quickstart — Python API
+
+For programmatic use of individual evaluators:
 
 ```python
 from eureqai import TransparencyEvaluator
