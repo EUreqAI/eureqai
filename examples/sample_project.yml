@@ -1,0 +1,65 @@
+# AI Act readiness — project description for `eureqai assess`.
+# Run:  eureqai assess --config examples/sample_project.yml --output sample_report.md
+#
+# This describes a fictional clinical referral-triage assistant deployed as
+# a high-risk system under Annex III (5(a) — access to essential services).
+# It illustrates a realistic mid-build state with several open gaps so the
+# generated report has something to flag.
+
+project:
+  name: ReferralTriageAssistant
+  version: 0.4.0
+  organisation: Acme Health
+  intended_purpose: >-
+    Prioritise incoming patient referral letters per hospital department,
+    suggest a triage category for clinician review. Final decision is
+    always taken by a human clinician.
+  deployment_context: >-
+    EU hospitals; embedded in the EHR's referral inbox. Outputs are
+    advisory and never executed without clinician sign-off.
+
+classification:
+  role: provider
+  risk_class: high_risk
+  annex_iii_categories: ["5(a)"]
+
+documents:
+  technical_documentation: docs/annex_iv.md
+  data_governance_policy: docs/data_governance.md
+  instructions_for_use: docs/ifu.md
+  risk_classification: docs/risk_classification.md
+  ai_literacy_programme: docs/ai_literacy.md
+  fria: docs/fria.md
+
+answers:
+  PROHIB-1: yes
+  LIT-1: partial
+  RISK-1: yes
+  DATA-1: yes
+  DATA-2: partial
+  DOC-1: yes
+  LOG-1: yes
+  TRANS-1: yes
+  TRANS-2: yes
+  OVER-1: yes
+  TECH-1: partial
+  QMS-1: no
+  GPAI-1: na
+  FRIA-1: yes
+
+notes:
+  LIT-1: >-
+    Training programme exists for clinicians; admin staff onboarding is
+    being drafted, target Q3.
+  DATA-2: >-
+    Lineage is documented for ETL, but minimisation review for two
+    secondary fields is outstanding.
+  TECH-1: >-
+    Accuracy and robustness are declared; adversarial testing for prompt
+    injection scheduled for the next sprint.
+  QMS-1: >-
+    QMS work has not started — currently the biggest gap and the reason
+    we cannot place the system on the market yet.
+  GPAI-1: >-
+    Not a GPAI provider; we deploy a third-party LLM and rely on the
+    provider's GPAI documentation.
