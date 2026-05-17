@@ -16,8 +16,10 @@ against **Regulation (EU) 2024/1689 — the EU AI Act**.
 | `TransparencyEvaluator` | Art. 50, Art. 13(3) | ✅ |
 | `FairnessEvaluator` | Art. 10 (data governance, bias) | ✅ |
 | `PrivacyEvaluator` | Art. 10(5) + GDPR Art. 32 | ✅ |
-| `TechnicalRobustnessEvaluator` | Art. 15 | ✅ |
-| Per-area deep-dive evaluators (GPAI, prohibited practices, FRIA) | Art. 5, 27, 51–55 | 🛠 planned |
+| `TechnicalRobustnessEvaluator` | Art. 15 (accuracy, robustness, cybersecurity) | ✅ |
+| `GPAIEvaluator` | Art. 51, 53, 55 (incl. systemic-risk presumption + Annex XI/XII) | ✅ |
+| Prohibited practices screening | Art. 5 | 🛠 planned |
+| Annex IV technical documentation checklist | | 🛠 planned |
 
 See the [issues board](https://github.com/EUreqAI/eureqai/issues) for the roadmap.
 
@@ -70,6 +72,7 @@ evaluator.evaluate(
 
 report = evaluator.generate_report()
 print(report["summary"])
+
 ```
 @software{eureqai2024,
   title={EUreqAI: EU AI Act Compliance Framework for LLMs},
