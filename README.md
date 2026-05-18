@@ -30,7 +30,7 @@ months away at the time of writing. Key milestones:
 | `PrivacyEvaluator` | Art. 10(5) + GDPR Art. 32 | ✅ |
 | `TechnicalRobustnessEvaluator` | Art. 15 (accuracy, robustness, cybersecurity) | ✅ |
 | `GPAIEvaluator` | Art. 51, 53, 55 (incl. systemic-risk presumption + Annex XI/XII) | ✅ |
-| Prohibited practices screening | Art. 5 | 🛠 planned |
+| `ProhibitedPracticesEvaluator` | Art. 5 (hard-gate screener for the eight banned practices) | ✅ |
 | Annex IV technical documentation checklist | Art. 11; Annex IV | 🛠 planned |
 
 See the [issues board](https://github.com/EUreqAI/eureqai/issues) for the
