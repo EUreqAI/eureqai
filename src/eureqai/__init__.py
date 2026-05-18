@@ -14,6 +14,10 @@ from eureqai.evaluators.base import (
 from eureqai.evaluators.fairness import FairnessEvaluator
 from eureqai.evaluators.gpai import GPAIEvaluator
 from eureqai.evaluators.privacy import PrivacyEvaluator
+from eureqai.evaluators.prohibited_practices import (
+    ProhibitedPracticesEvaluator,
+    screen_blockers,
+)
 from eureqai.evaluators.technical_robustness import TechnicalRobustnessEvaluator
 from eureqai.evaluators.transparency import TransparencyEvaluator
 from eureqai.report import Assessment, assess, render_markdown
@@ -27,8 +31,10 @@ __all__ = [
     "FairnessEvaluator",
     "GPAIEvaluator",
     "PrivacyEvaluator",
+    "ProhibitedPracticesEvaluator",
     "TechnicalRobustnessEvaluator",
     "TransparencyEvaluator",
+    "screen_blockers",
     "Assessment",
     "CATALOGUE",
     "ChecklistItem",

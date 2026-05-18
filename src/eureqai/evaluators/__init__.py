@@ -8,6 +8,9 @@ from eureqai.evaluators.base import (
 from eureqai.evaluators.fairness import FairnessEvaluator
 from eureqai.evaluators.gpai import GPAIEvaluator
 from eureqai.evaluators.privacy import PrivacyEvaluator
+from eureqai.evaluators.prohibited_practices import (
+    ProhibitedPracticesEvaluator,
+)
 from eureqai.evaluators.technical_robustness import TechnicalRobustnessEvaluator
 from eureqai.evaluators.transparency import TransparencyEvaluator
 
@@ -18,6 +21,7 @@ __all__ = [
     "FairnessEvaluator",
     "GPAIEvaluator",
     "PrivacyEvaluator",
+    "ProhibitedPracticesEvaluator",
     "TechnicalRobustnessEvaluator",
     "TransparencyEvaluator",
 ]
